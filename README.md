@@ -1,1 +1,1 @@
-# terraform-lab011
+# VPC + EC2 + CentOS 7 AMI
