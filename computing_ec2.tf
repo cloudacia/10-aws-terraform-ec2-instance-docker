@@ -6,7 +6,7 @@ resource "aws_instance" "web01" {
     host = self.public_ip
   }
   ami                         = var.aws_amis[var.aws_region]
-  instance_type               = "t2.micro"
+  instance_type               = "t2.medium"
   key_name                    = aws_key_pair.user_key.key_name
   vpc_security_group_ids      = [aws_security_group.web_and_ssh.id]
   subnet_id                   = aws_subnet.subnet01.id

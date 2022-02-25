@@ -28,6 +28,22 @@ resource "aws_security_group" "web_and_ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # https port
+  ingress {
+    from_port   = 5601
+    to_port     = 5601
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # https port
+  ingress {
+    from_port   = 9200
+    to_port     = 9200
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # Open access to public network
   egress {
     from_port   = 0
