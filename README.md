@@ -1,4 +1,4 @@
-# AWS Single EC2 instance + Docker
+# AWS Single EC2 instance + CentOS 7 + Docker
 
 This project aims to deploy Wordpress on an EC2 instance using Terraform and Ansible Playbook.
 
