@@ -2,10 +2,10 @@
 resource "aws_instance" "web01" {
   connection {
     type = "ssh"
-    user = "ubuntu"
+    user = "centos"
     host = self.public_ip
   }
-  ami                         = var.aws_amis[var.aws_region]
+  ami                         = var.aws_amis
   instance_type               = "t2.medium"
   key_name                    = aws_key_pair.user_key.key_name
   vpc_security_group_ids      = [aws_security_group.web_and_ssh.id]
@@ -13,7 +13,11 @@ resource "aws_instance" "web01" {
   user_data                   = filebase64("script/script.sh")
   associate_public_ip_address = true
 
+  root_block_device {
+    delete_on_termination = true
+  }
+
   tags = {
-    Name = "first-name_last-name"
+    Name = "Cloudacia"
   }
 }

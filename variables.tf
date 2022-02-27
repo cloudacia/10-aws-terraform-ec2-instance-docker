@@ -26,13 +26,12 @@ variable "availability_zone01" {
   description = "US East (N. Virginia)"
 }
 
-# AWS AMI IMANGE
+# AWS AMI IMANGE (CENTOS 7)
 variable "aws_amis" {
-  type = map(any)
-  default = {
-    us-east-1 = "ami-0affd4508a5d2481b"
-  }
+  type    = string
+  default = "ami-0affd4508a5d2481b"
 }
+
 
 # AWS INSTANCE TYPE
 variable "instance_type" {
