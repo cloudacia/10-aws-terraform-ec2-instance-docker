@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-              git "https://github.com/cloudacia/3-aws-terraform-ec2-instance-website.git"
+              git "https://github.com/cloudacia/10-aws-terraform-ec2-instance-docker.git"
               }
             }
 
