@@ -6,7 +6,7 @@ resource "aws_security_group" "web_and_ssh" {
 
   # http port
   ingress {
-    Description = "Allow incoming traffic to port 80"
+    description = "Allow incoming traffic to port 80"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
@@ -15,7 +15,7 @@ resource "aws_security_group" "web_and_ssh" {
 
   # ssh port
   ingress {
-    Description = "Allow incoming traffic to port 22"
+    description = "Allow incoming traffic to port 22"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
