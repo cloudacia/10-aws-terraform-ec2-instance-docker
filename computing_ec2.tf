@@ -15,6 +15,7 @@ resource "aws_instance" "web01" {
 
   root_block_device {
     delete_on_termination = true
+    encrypted             = true
   }
 
   tags = {

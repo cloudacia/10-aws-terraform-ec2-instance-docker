@@ -6,46 +6,25 @@ resource "aws_security_group" "web_and_ssh" {
 
   # http port
   ingress {
+    Description = "Allow incoming traffic to port 80"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # https port
+  # ssh port
   ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  # https port
-  ingress {
+    Description = "Allow incoming traffic to port 22"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # https port
-  ingress {
-    from_port   = 5601
-    to_port     = 5601
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  # https port
-  ingress {
-    from_port   = 9200
-    to_port     = 9200
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
   # Open access to public network
   egress {
+    description = "Allow all outbound traffic"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
@@ -53,6 +32,6 @@ resource "aws_security_group" "web_and_ssh" {
   }
 
   tags = {
-    Name = "first-name_last-name"
+    Name = "cloudacia"
   }
 }
