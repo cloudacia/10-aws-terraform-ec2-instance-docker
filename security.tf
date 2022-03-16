@@ -22,6 +22,15 @@ resource "aws_security_group" "web_and_ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # sonarqube port
+  ingress {
+    description = "Allow incoming traffic to port 9000"
+    from_port   = 9000
+    to_port     = 9000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # Open access to public network
   egress {
     description = "Allow all outbound traffic"
